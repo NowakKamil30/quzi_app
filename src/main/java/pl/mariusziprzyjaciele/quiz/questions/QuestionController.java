@@ -1,14 +1,15 @@
 package pl.mariusziprzyjaciele.quiz.questions;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import reactor.core.publisher.Flux;
+import pl.mariusziprzyjaciele.quiz.interfaces.CrudMethodResponse;
 
 import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/question")
-public class QuestionController {
+public class QuestionController implements CrudMethodResponse<Question, String> {
 
     private final QuestionService questionService;
 
@@ -17,13 +18,44 @@ public class QuestionController {
         this.questionService = questionService;
     }
 
-    @GetMapping
-    public List<Question> getAllQuestion() {
-        return questionService.getAll();
+
+    @Override
+    public ResponseEntity<List<Question>> getAll() {
+        return ResponseEntity.ok(questionService.getAll());
     }
 
-    @PostMapping
-    public void addQuestion(@RequestBody Question question) {
+    @Override
+    public ResponseEntity<Question> getById(@PathVariable String id) {
+        return questionService.getById(id)
+                .map(ResponseEntity::ok)
+                .orElse(ResponseEntity
+                        .noContent()
+                        .build());
+    }
+
+
+    @Override
+    public ResponseEntity<Void> deleteById(@PathVariable String id) {
+        questionService.delete(id);
+        return ResponseEntity
+                .noContent()
+                .build();
+    }
+
+    @Override
+    public ResponseEntity<Void> put(String id, Question question) {
+        question.setId(id);
         questionService.add(question);
+        return ResponseEntity
+                .accepted()
+                .build();
+    }
+
+    @Override
+    public ResponseEntity<Void> post(Question question) {
+        questionService.add(question);
+        return ResponseEntity
+                .accepted()
+                .build();
     }
 }
