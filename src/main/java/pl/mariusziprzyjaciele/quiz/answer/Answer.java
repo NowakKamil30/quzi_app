@@ -1,4 +1,4 @@
-package pl.mariusziprzyjaciele.quiz.question;
+package pl.mariusziprzyjaciele.quiz.answer;
 
 import lombok.Data;
 import org.springframework.data.annotation.Id;
