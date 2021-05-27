@@ -55,7 +55,7 @@ public class QALoader implements CommandLineRunner {
         }
     }
 
-    public static Question utilParseCsv(String line){
+    private static Question utilParseCsv(String line){
         List<String> splitList = Arrays.stream(line.split("::")).toList();
 
         List<Answer> answerList = new ArrayList<>(){{
@@ -80,7 +80,7 @@ public class QALoader implements CommandLineRunner {
         return question;
     }
 
-    public void sendToDB(List<Question> questions){
+    private void sendToDB(List<Question> questions){
         questions.forEach(question -> {
             if(questionCrudRepository.findByQuestion(question.getQuestion()).isEmpty()){
                 questionService.add(question);
