@@ -75,8 +75,6 @@ public class QALoader implements CommandLineRunner {
                 .setAnswers(answers)
                 .build();
 
-
-        question.setAnswers(answers);
         return question;
     }
 
