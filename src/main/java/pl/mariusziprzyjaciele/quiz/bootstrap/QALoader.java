@@ -1,11 +1,11 @@
 package pl.mariusziprzyjaciele.quiz.bootstrap;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
-import org.springframework.transaction.annotation.Transactional;
 import pl.mariusziprzyjaciele.quiz.answers.Answer;
 import pl.mariusziprzyjaciele.quiz.questions.Question;
 import pl.mariusziprzyjaciele.quiz.questions.QuestionCrudRepository;
@@ -24,6 +24,7 @@ public class QALoader implements CommandLineRunner {
     private final QuestionService questionService;
     private final QuestionCrudRepository questionCrudRepository;
 
+    @Autowired
     public QALoader(QuestionService questionService,
                     QuestionCrudRepository questionCrudRepository){
         this.questionService = questionService;
@@ -76,7 +77,6 @@ public class QALoader implements CommandLineRunner {
         return question;
     }
 
-    @Transactional
     public void sendToDB(List<Question> questions){
         questions.forEach(question -> {
             if(questionCrudRepository.findByQuestion(question.getQuestion()).isEmpty()){
