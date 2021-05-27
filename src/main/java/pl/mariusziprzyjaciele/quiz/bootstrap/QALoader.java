@@ -7,6 +7,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Component;
 import pl.mariusziprzyjaciele.quiz.answers.Answer;
+import pl.mariusziprzyjaciele.quiz.builders.QuestionBuilder;
 import pl.mariusziprzyjaciele.quiz.questions.Question;
 import pl.mariusziprzyjaciele.quiz.questions.QuestionCrudRepository;
 import pl.mariusziprzyjaciele.quiz.questions.QuestionService;
@@ -67,13 +68,15 @@ public class QALoader implements CommandLineRunner {
         String correctNum = splitList.get(ParsingQuestion.CORRECT_ANS.getParsingSequenceNumber());
         answerList.get(Integer.parseInt(correctNum)-1).setCorrect(true);
 
-        Question question = new Question();
-
-        question.setQuestion(splitList.get(ParsingQuestion.QUESTION.getParsingSequenceNumber()));
         Answer[] answers = answerList.toArray(new Answer[answerList.size()]);
 
-        question.setAnswers(answers);
+        Question question = QuestionBuilder.getInstanceOf()
+                .setQuestion(splitList.get(ParsingQuestion.QUESTION.getParsingSequenceNumber()))
+                .setAnswers(answers)
+                .build();
 
+
+        question.setAnswers(answers);
         return question;
     }
 
