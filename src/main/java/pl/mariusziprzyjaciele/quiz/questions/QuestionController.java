@@ -19,7 +19,7 @@ public class QuestionController implements CrudMethodResponse<Question, String> 
     }
 
     @GetMapping("/limit")
-    public ResponseEntity<List<Question>> getLimit(@RequestParam int limit) {
+    public ResponseEntity<List<QuestionDto>> getLimit(@RequestParam int limit) {
         return ResponseEntity.ok(questionService.getQuestions(limit));
     }
 

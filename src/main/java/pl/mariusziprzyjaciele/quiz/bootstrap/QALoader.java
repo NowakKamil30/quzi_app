@@ -56,7 +56,7 @@ public class QALoader implements CommandLineRunner {
     }
 
     private static Question utilParseCsv(String line){
-        List<String> splitList = Arrays.stream(line.split("::")).toList();
+        List<String> splitList = Arrays.stream(line.split("::")).collect(Collectors.toList());
 
         List<Answer> answerList = new ArrayList<>(){{
             add(new Answer(splitList.get(ParsingQuestion.ANSWER_A.getParsingSequenceNumber()), false));

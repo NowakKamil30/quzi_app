@@ -45,15 +45,15 @@ public class QuestionService implements CrudMethods<Question, String> {
         questionCrudRepository.save(question);
     }
 
-    public List<Question> getQuestions(int limit) {
+    public List<QuestionDto> getQuestions(int limit) {
         List<Question> questions = questionCrudRepository.findAll();
         if (limit > questions.size()) {
             throw new IndexOutOfBoundsException();
         }
-        List<Question> result = new ArrayList<>();
+        List<QuestionDto> result = new ArrayList<>();
         RandomWithoutRedundancy randomWithoutRedundancy = new RandomWithoutRedundancy(questions.size());
         for (int i = 0; i < limit; i++) {
-            result.add(questions.get(randomWithoutRedundancy.get()));
+            result.add(new QuestionDto(questions.get(randomWithoutRedundancy.get())));
         }
         return result;
     }
