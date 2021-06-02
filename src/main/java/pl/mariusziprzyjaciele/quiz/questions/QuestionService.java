@@ -2,8 +2,10 @@ package pl.mariusziprzyjaciele.quiz.questions;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import pl.mariusziprzyjaciele.RandomWithoutRedundancy;
 import pl.mariusziprzyjaciele.quiz.interfaces.CrudMethods;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -41,5 +43,18 @@ public class QuestionService implements CrudMethods<Question, String> {
     public void change(Question question, String id) {
         question.setId(id);
         questionCrudRepository.save(question);
+    }
+
+    public List<Question> getQuestions(int limit) {
+        List<Question> questions = questionCrudRepository.findAll();
+        if (limit > questions.size()) {
+            throw new IndexOutOfBoundsException();
+        }
+        List<Question> result = new ArrayList<>();
+        RandomWithoutRedundancy randomWithoutRedundancy = new RandomWithoutRedundancy(questions.size());
+        for (int i = 0; i < limit; i++) {
+            result.add(questions.get(randomWithoutRedundancy.get()));
+        }
+        return result;
     }
 }
