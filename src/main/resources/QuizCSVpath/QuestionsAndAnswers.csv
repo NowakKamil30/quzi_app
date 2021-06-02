@@ -1,30 +1,30 @@
-1.Domyślne ustawienia widoczności zmiennej w niestatycznej klasie w javie to::public::private::protected::package::4
-2.Co oznacza że klasa jest finalna?::Nie można po niej dziedziczyć::Nie można zmienić jej pól::Nie pozwala implementować interfejsu::Nie pozwala przeciążyć konstruktora::1
-3.Która metoda musi być implementowana przez wszystkie wątki?::run()::stop()::wait()::start()::1
-4.JIT::to framework::jest implementacją JVM::służy do polepszenia wydajności programu na podstawie kodu bajtowego::Jest wykorzystany w testach jednostkowych::2
-5.Czym jest interfejs?::Jest kolekcją abstrakcyjnych metod które muszą być zaimplementowane w implementującej go klasie::Synonimem do abstrakcyjnej klasy::Podklasą::Jest kolekcją metod które mogą, ale nie muszą być zaimplementowane  w implementującej go klasie::1
-6.Jakie informacji używa statyczne wiązanie?::Informacji o typie::Informacji o obiekcie::Każde z powyższych::Żadne z powyższych::1
-7.Gdzie przechowywane są obiekty w pamięci javy?::Stos::Sterta::.GLOBAL::Żadne z powyższych::2
-8.Kiedy zachodzi statyczne wiązanie::Podczas czasu kompilacji::Podczas run-time::Jeżeli obiekt istnieje na stercie to w czasie run-time, inaczej w czasie kompilacji::Nie można tego jednoznacznie określić::1
-9.Która klasa jest thread-safe?::StringBuilder::StringBuffer::Każda z nich::Żadna z nich::2
-10.Dziedziczenie reprezentuje własność::Zawiera::Jest::Używa::Wykonuje::2
-11.Interfejs funkcyjny który przyjmuje 1 parametr dowolnego typu i nic nie zwraca to::Runnable::Consumer::Supplier::Predicate::2
-12.Jaki jest domyślny scope dla Beana w Springu?::Singleton::Prototype::Session::Request::1
-13.Czym jest DAO::Warstwa odpowiedzialna za komunikacje z bazą danych::Warstwa wysyłana do użytkownika jako odpowiedź API::Settery i gettery dla danej klasy::Implementacja modelu dla danego serwisu::1
-14.W Czym pomaga wzorzec budowniczego?::Pomaga on konstruować obiekty::Pomaga on konstruować klasy::Pomaga on przeładowywać klasy::Pomaga on dodawać nowe klasy do pakietu::1
-15.Jaka jest różnica między listą a setem?::Set zawiera unikalne wartości::Lista zawiera unikalne wartości::Set, niezależnie od implementacji, zawiera wartości zawsze w kolejności::Lista, niezależnie od implementacji, zawiera wartości zawsze w kolejności::1
-16.Co robi w javie finally?::Jest to modyfikator, oznaczający że do danej zmiennej przypisać wartość można tylko raz::Jest to element bloku try... catch::Jest to metoda klasy Object, która wywoływana jest zanim obiekt zostanie usunięty z pamieci::Żadne z powyższych::2
-17.Co oznacza modyfikator volatile?::Zmienna zostanie usunięta od razu jak nie będzie potrzebna::Zagwarantowane jest że każdy wątek, który będzie chciał zapisać do takiej zmiennej będzie synchronizowany::Wątek zamiast odczytywać zmienną cach'owaną w pamięci podręcznej, odczyta ją z jej pierwotnej lokalizacji w pamięci::Zmienna taka po odczytaniu zmieni swoją wartośc na null::3
-18.Adnotacja służąca do wstrzykiwania zależności w Springu to::Autowired::Service::Component::Send::1
-19.Czym jest String pool::Miejscem w pamięci, dzięki któremu JVM może optymalizować użycie pamięci::Kolekcją na obiektach typu String::Generatorem losowych obiektów typu String::Żadne z powyższych::1
-20.W skład typów ClassLoaderów w Javie nie wyróżniamy::Bootstrap::Extension::Application::Generation::4
-21.Która z poniższych adnotacji na wstrzykiwanie zależności w Javie nie istnieje::Autowired::Resource::Inject::Put::4
-22.Czym jest JDBCtemplate?::Jest to warstwa API przez którą możemy wykonywać różne operacje na bazie danych m.in insert, select id.::Jest to wzorzec projektowy wykorzystywany w budowaniu aplikacji opierających się o relacyjne bazy::Jest szkielet sterownika bazy danych::Żadne z powyższych::1
-23.Wśród pojęć programowania zorientowanego aspektowo nie wyróżniamy::Advice::Pointcut::JoinPoint::FinalPoint::4
-24.Zasada podstawienia Liskov mówi o tym, że::Klasa dziedzicząca powinna rozszerzać możliwości klasy bazowej w taki sposób, żeby nie zmieniać jej docelowego zachowania.::Klasa dziedzicząca musi w znaczny sposób zmieniać zachowanie klasy w stosunku do klasy bazowej.::Klasa dziedzicząca jest generalizacją klasy bazowej::Żadne z powyższych::1
-25.Zasada odwracania zależności mówi o tym, ze::Klasy powinny być zwięzłe i konkretne::Klasa pochodna powinna być przeciwieństwem klasy bazowej::Klasy powinny zależeć od abstrakcji a nie konkretnej implementacji::Klasa bazowa powinna być przeciwienstwem klasy pochodnej::3
-26.Polimorfizm to::Tablice które zawierają wiecej niż jeden element tego samego typu::Możliwośc wyabstrahowania danych od konkretnych typów::Zmiana wartości zmiennej przez użytkownika::Sposób w jaki możemy przechowywać wiele różnych obiektów tych samych klas w tablicach asocjacyjnych::2
-27.W skład pamięci sterty HEAP nie wchodzi warstwa::Eden::Reserved::Surivor 1::Limbo::4
-28.int y = x++ to przykład::PostInkrementacji::PreInkrementacji::Dekrementacji::NadInkrementacji::1
-29.Integer num = 1 to przykład::Unboxingu::Autoboxingu::OpenBoxing::CloseBoxing::1
-30.Wskaż język w pełni typowany dynamicznie::C++::Java::Python::C#::3
+Domyślne ustawienia widoczności zmiennej w niestatycznej klasie w javie to::public::private::protected::package::4
+Co oznacza że klasa jest finalna?::Nie można po niej dziedziczyć::Nie można zmienić jej pól::Nie pozwala implementować interfejsu::Nie pozwala przeciążyć konstruktora::1
+Która metoda musi być implementowana przez wszystkie wątki?::run()::stop()::wait()::start()::1
+JIT::to framework::jest implementacją JVM::służy do polepszenia wydajności programu na podstawie kodu bajtowego::Jest wykorzystany w testach jednostkowych::2
+Czym jest interfejs?::Jest kolekcją abstrakcyjnych metod które muszą być zaimplementowane w implementującej go klasie::Synonimem do abstrakcyjnej klasy::Podklasą::Jest kolekcją metod które mogą, ale nie muszą być zaimplementowane  w implementującej go klasie::1
+Jakie informacji używa statyczne wiązanie?::Informacji o typie::Informacji o obiekcie::Każde z powyższych::Żadne z powyższych::1
+Gdzie przechowywane są obiekty w pamięci javy?::Stos::Sterta::.GLOBAL::Żadne z powyższych::2
+Kiedy zachodzi statyczne wiązanie::Podczas czasu kompilacji::Podczas run-time::Jeżeli obiekt istnieje na stercie to w czasie run-time, inaczej w czasie kompilacji::Nie można tego jednoznacznie określić::1
+Która klasa jest thread-safe?::StringBuilder::StringBuffer::Każda z nich::Żadna z nich::2
+Dziedziczenie reprezentuje własność::Zawiera::Jest::Używa::Wykonuje::2
+Interfejs funkcyjny który przyjmuje 1 parametr dowolnego typu i nic nie zwraca to::Runnable::Consumer::Supplier::Predicate::2
+Jaki jest domyślny scope dla Beana w Springu?::Singleton::Prototype::Session::Request::1
+Czym jest DAO::Warstwa odpowiedzialna za komunikacje z bazą danych::Warstwa wysyłana do użytkownika jako odpowiedź API::Settery i gettery dla danej klasy::Implementacja modelu dla danego serwisu::1
+W Czym pomaga wzorzec budowniczego?::Pomaga on konstruować obiekty::Pomaga on konstruować klasy::Pomaga on przeładowywać klasy::Pomaga on dodawać nowe klasy do pakietu::1
+Jaka jest różnica między listą a setem?::Set zawiera unikalne wartości::Lista zawiera unikalne wartości::Set, niezależnie od implementacji, zawiera wartości zawsze w kolejności::Lista, niezależnie od implementacji, zawiera wartości zawsze w kolejności::1
+Co robi w javie finally?::Jest to modyfikator, oznaczający że do danej zmiennej przypisać wartość można tylko raz::Jest to element bloku try... catch::Jest to metoda klasy Object, która wywoływana jest zanim obiekt zostanie usunięty z pamieci::Żadne z powyższych::2
+Co oznacza modyfikator volatile?::Zmienna zostanie usunięta od razu jak nie będzie potrzebna::Zagwarantowane jest że każdy wątek, który będzie chciał zapisać do takiej zmiennej będzie synchronizowany::Wątek zamiast odczytywać zmienną cach'owaną w pamięci podręcznej, odczyta ją z jej pierwotnej lokalizacji w pamięci::Zmienna taka po odczytaniu zmieni swoją wartośc na null::3
+Adnotacja służąca do wstrzykiwania zależności w Springu to::Autowired::Service::Component::Send::1
+Czym jest String pool::Miejscem w pamięci, dzięki któremu JVM może optymalizować użycie pamięci::Kolekcją na obiektach typu String::Generatorem losowych obiektów typu String::Żadne z powyższych::1
+W skład typów ClassLoaderów w Javie nie wyróżniamy::Bootstrap::Extension::Application::Generation::4
+Która z poniższych adnotacji na wstrzykiwanie zależności w Javie nie istnieje::Autowired::Resource::Inject::Put::4
+Czym jest JDBCtemplate?::Jest to warstwa API przez którą możemy wykonywać różne operacje na bazie danych m.in insert, select id.::Jest to wzorzec projektowy wykorzystywany w budowaniu aplikacji opierających się o relacyjne bazy::Jest szkielet sterownika bazy danych::Żadne z powyższych::1
+Wśród pojęć programowania zorientowanego aspektowo nie wyróżniamy::Advice::Pointcut::JoinPoint::FinalPoint::4
+Zasada podstawienia Liskov mówi o tym, że::Klasa dziedzicząca powinna rozszerzać możliwości klasy bazowej w taki sposób, żeby nie zmieniać jej docelowego zachowania.::Klasa dziedzicząca musi w znaczny sposób zmieniać zachowanie klasy w stosunku do klasy bazowej.::Klasa dziedzicząca jest generalizacją klasy bazowej::Żadne z powyższych::1
+Zasada odwracania zależności mówi o tym, ze::Klasy powinny być zwięzłe i konkretne::Klasa pochodna powinna być przeciwieństwem klasy bazowej::Klasy powinny zależeć od abstrakcji a nie konkretnej implementacji::Klasa bazowa powinna być przeciwienstwem klasy pochodnej::3
+Polimorfizm to::Tablice które zawierają wiecej niż jeden element tego samego typu::Możliwośc wyabstrahowania danych od konkretnych typów::Zmiana wartości zmiennej przez użytkownika::Sposób w jaki możemy przechowywać wiele różnych obiektów tych samych klas w tablicach asocjacyjnych::2
+W skład pamięci sterty HEAP nie wchodzi warstwa::Eden::Reserved::Surivor 1::Limbo::4
+int y = x++ to przykład::PostInkrementacji::PreInkrementacji::Dekrementacji::NadInkrementacji::1
+Integer num = 1 to przykład::Unboxingu::Autoboxingu::OpenBoxing::CloseBoxing::1
+Wskaż język w pełni typowany dynamicznie::C++::Java::Python::C#::3
