@@ -5,6 +5,8 @@ import {
     Route,
     Switch
   } from 'react-router-dom';
+import QuizPage from '../Pages/QuizPage';
+import ScorePage from '../Pages/ScorePage';
 
 
 
@@ -18,7 +20,12 @@ const AppRouter = () =>{
                     <Route path='/form'> 
                         <FormPage/>
                     </Route>
-                    
+                    <Route path='/quiz'>
+                        <QuizPage/>
+                    </Route>
+                    <Route path='/resume'>
+                        <ScorePage/>
+                    </Route>
             </Switch>
         </Router>
     );

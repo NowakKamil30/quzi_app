@@ -2,6 +2,7 @@ import { createStyles, makeStyles, Theme } from '@material-ui/core';
 import { Formik } from 'formik';
 import Button from '@material-ui/core/Button';
 import {UserInterface} from '../Interfaces/userInterface';
+import { useHistory } from 'react-router';
 
 interface userInputFormPropsTypes {
     saveUser : (user : UserInterface) => void,
@@ -10,12 +11,16 @@ interface userInputFormPropsTypes {
 const UserInputForm  = ({saveUser} : userInputFormPropsTypes)  => {
 
     const classes = useStyles();
+    const history = useHistory();
 
     return(
         <div>
             <Formik
                 initialValues={{name: '', email: ''}}
-                onSubmit={(values : UserInterface) =>  saveUser(values)}
+                onSubmit={(values : UserInterface) =>  {
+                    saveUser(values);
+                    history.push('/quiz');
+                }}
                 >
                 {
                 ({

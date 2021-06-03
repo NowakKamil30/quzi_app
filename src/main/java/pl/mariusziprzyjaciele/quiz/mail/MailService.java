@@ -1,4 +1,4 @@
-package pl.mariusziprzyjaciele.mail;
+package pl.mariusziprzyjaciele.quiz.mail;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;

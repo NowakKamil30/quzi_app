@@ -5,7 +5,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import pl.mariusziprzyjaciele.quiz.interfaces.CrudMethodResponse;
 
+import javax.mail.MessagingException;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 @RequestMapping("/api/v1/question")
@@ -19,8 +21,15 @@ public class QuestionController implements CrudMethodResponse<Question, String> 
     }
 
     @GetMapping("/limit")
+    @CrossOrigin(origins = "http://localhost:3000")
     public ResponseEntity<List<QuestionDto>> getLimit(@RequestParam int limit) {
         return ResponseEntity.ok(questionService.getQuestions(limit));
+    }
+
+    @PostMapping("/result")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public ResponseEntity<Score> getScore(@RequestBody Result result) throws MessagingException {
+        return ResponseEntity.ok(questionService.getScore(result));
     }
 
 

@@ -4,7 +4,7 @@ import {UserInterface} from '../../Interfaces/userInterface';
 
 
 export interface UserReducerState {
-    user ?: UserInterface,
+    user : UserInterface,
     isSaved : boolean,
     scored : number,
 }
